@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>위드펫 펫시터</title>
+
+    <!--	1. 초기화 -->
+    <link href="./style/reset.css" rel="stylesheet" type="text/css">
+
+    <!--  2. 공통서식 - 글꼴, 크기, 색상, 하이퍼링크 -->
+    <link href="./style/base.css" rel="stylesheet" type="text/css">
+    <link href="./style/common.css" rel="stylesheet" type="text/css">
+
+
+    <!--  3. mobile 서식  최대 1024px-->
+    <link href="./style/mobile_search.css" rel="stylesheet" type="text/css">
+
+
+    <!-- 5. pc서식 최소 1024이상 -->
+    <link href="./style/pc.css" rel="stylesheet" type="text/css">
+
+    <!-- 아이콘 폰트 주소 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" type="text/css"
+        rel="stylesheet">
+
+
+    <!--	파비콘 이미지 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./img/pet_pavi.ico" />
+
+    <!--플렉스 슬라이더 CSS-->
+    <link rel="stylesheet" href="./style/flexslider.css" type="text/css">
+
+    <!--제이쿼리 라이브러리-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+
+    <!--플렉스 슬라이더 제이쿼리 -->
+    <script src="./script/jquery.flexslider.js"></script>
+    <script>
+        $(document).ready(function () {
+            //           토글버튼 클릭시 스펜 태그를 엑스자 모양으로 변경
+
+            const toggle = $('header #toggle');
+
+            toggle.click(function () {
+                //각 span 에 적용
+                $(this).find('span').eq(0).toggleClass('toggle_act01'); //45
+                $(this).find('span').eq(1).toggleClass('toggle_act02'); //숨김
+                $(this).find('span').eq(2).toggleClass('toggle_act03'); //-45
+                //wrap 전체가 왼쪽에서 80% 이동 하여 보이게 됨 
+                // $('#wrap').toggleClass('wrap_pos');
+                $('#wrap2').toggleClass('wrap_pos');
+            });
+
+            let sPos;
+            //화면스크롤이 세로로 이동되면 토글버튼도 같이 올라가야 함. - fixed 속성을 absolute로 바꾸기 
+            $(window).scroll(function () {
+                sPos = $(window).scrollTop(); //화면 스크롤 값을 변수에 저장한다. 
+                console.log(sPos);
+                if (sPos >= 2) {
+                    $('#toggle').addClass('toggle_act');
+                } else {
+                    $('#toggle').removeClass('toggle_act');
+
+                }
+
+                /*       let=gnb$('.gnb>ul>li>a');
+                       
+                       gnb.click(function(e){
+                           e.preventDefault(); //#기능 무력화
+                           
+                           return false; //#기능 무력화
+                       });
+                       
+                       */
+
+            });
+
+
+
+        });
+    </script>
+</head>
+
+
+
+
+<body>
+    <div id="wrap">
+        <div id="wrap2">
+            <header>
+
+                <!--        토글버튼-->
+                <div id="toggle">
+                    <span>&nbsp;</span>
+                    <span>&nbsp;</span>
+                    <span>&nbsp;</span>
+                </div>
+
+
+                <h1>
+                    <a href="index.html" title="메인페이지 바로가기">
+                        <img src="./img/withpet_logo.png" alt="위드펫로고">
+                    </a>
+
+                </h1>
+
+                <a href="my.html" title="마이 페이지" class="user">
+                    <i class="fas fa-user"></i>
+                </a>
+
+            </header>
+
+            <!--   gnb   - 헤더 밖에 만들어서 gnb가 메인화면을 밀고 나오도록 함 -->
+            <nav class="gnb">
+                <ul>
+                    <li><a href="my.html" title="마이 페이지">마이페이지</a></li>
+                    <li><a href="service.html" title="서비스 소개">서비스 소개</a></li>
+                    <li><a href="event.html" title="회원 혜택">회원 혜택</a></li>
+                    <li><a href="search.html" title="시터 검색">시터 검색</a></li>
+                    <li><a href="care.html" title="돌봄 신청">돌봄 신청</a></li>
+                    <li><a href="pet.html" title="반려견 등록">반려견 등록</a></li>
+                    <li><a href="review.html " title="위드펫 후기">위드펫 후기</a></li>
+                    <li><a href="petsitter.html" title="펫시터 지원">펫시터 지원</a></li>
+
+                </ul>
+
+                <div id="n_logo">
+                    <a href="index.html" title="메인페이지 바로가기">
+                        <img src="./img/withpet_logo.png" alt="위드펫로고">
+                    </a>
+                </div>
+
+                <ul class="sns">
+                    <li><a href="https://www.instagram.com
+    " title="인스타그램"><img src="./img/sns-02.png" alt="인스타그램"></a></li>
+                    <li><a href="https://www.youtube.com/" title="유튜브"><img src="./img/sns-01.png" alt="유튜브"></a></li>
+                    <li><a href="https://section.blog.naver.com/" title="블로그"><img src="./img/sns-03.png" alt="블로그"></a>
+                    </li>
+                    <li><a href="https://m.facebook.com/" title="메인페이지 상단으로 이동"><img src="./img/sns-04.png"
+                                alt="페이스북"></a></li>
+                </ul>
+            </nav>
+
+            <div>
+                <ul class="search">
+
+                    <li> 
+                        <label for="check01">
+                            <img src="./img/pet-search2.gif" alt="상세검색">
+                            상세검색
+                        </label>
+                        <input type="checkbox" name="상세검색" id="check01">
+
+                    </li>
+
+                    <li> 
+                        <label for="check02">
+                            <img src="./img/pet-search1.gif" alt="추천매칭">
+                            추천매칭
+                        </label>
+                        <input type="checkbox" name="추천매칭" id="check02">
+
+                    </li>
+
+
+                </ul>
+
+                <h2><i class="fas fa-map-marker-alt"></i>지역</h2>
+                <h2><i class="fas fa-paw"></i> 방문 유형</h2>
+                <h2><i class="fas fa-paw"></i> 방문 시간</h2>
+                <h2><i class="fas fa-paw"></i> 돌봄 시간</h2>
+                <h2><i class="fas fa-paw"></i> 돌봄 서비스</h2>
+                <h2><i class="fas fa-paw"></i> 기타 요청사항</h2>
+                <input type="text">
+
+            </div>
+
+            <script>
+                var bg = document.querySelector('.search li');
+
+                bg.addEventListener("click", function (ev) {
+                    ev.preventDefault();
+                    if (ev.target.tagName == "Input") {
+                        if (ev.target.checked) {
+                            ev.target.parentNode.classList.add("selected");
+                        } else {
+                            ev.target.parentNode.classList.remove('selected');
+                        }
+                    }
+                })
+            </script>
+</body>
+
+</html>

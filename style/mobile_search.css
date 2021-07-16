@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+body {
+    font-family: 'S-CoreDream-3Light', '맑은 고딕', arial;
+}
+
+ul.search {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 80%;
+}
+
+ul.search li {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    border-radius: 50%;
+    text-align: center;
+    /* padding: 20px; */
+}
+
+
+/* ul.search li:hover{background-color: #faf0b9;} */
+ul.search li img {
+    width: 50%;
+    padding: 14px 0;
+    display: block;
+    margin: 0 auto;
+}
+
+ul.search li label {
+    padding: 0;
+    color: #34495e;
+    font-weight: bolder;
+    display: block;
+}
+
+.search li.selected {
+    background-color: #faf0b9;
+}
+
+/* input[type="checkbox"]:checked + label::before{
+      
+        color: chocolate;
+    } */
+h2 {
+    /* font-family: 'S-CoreDream-3Light', '맑은 고딕', arial; */
+    font-family: 30px;
+    padding: 20px 0;
+    color: #5f3a2f;
+    font-weight: bold;
+}
+
+h2>i {
+    margin: 0 4px;
+}
