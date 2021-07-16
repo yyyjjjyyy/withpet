@@ -1,0 +1,12 @@
+/* PC: 1025px 이상 */
+@media screen and (min-width: 1025px) {
+    #wrap {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .f_menu ul {
+        width: 40%;
+    }
+
+}

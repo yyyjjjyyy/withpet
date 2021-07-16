@@ -1,0 +1,174 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* MOBILE: 1024px 이하 */
+@media screen and (max-width: 1024px) {
+    .f_menu ul {
+        width: 100%;
+    }
+
+    .f_menu .search {
+        width: 100%;
+        bottom: 74px;
+    }
+}
+
+header,
+main,
+footer {
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+/*헤더영역*/
+header {
+
+    /*    background-color :#ece8d8;*/
+    /*    background-color :#fff8e8;*/
+    background-color: #f8ecd0;
+    height: 82px;
+    position: relative;
+    text-align: center;
+    /*    position: fixed;*/
+    z-index: 2000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header > h1 {
+    display: inline-block;
+    padding-top: 12px;
+    text-align: center;
+    box-sizing: border-box;
+
+}
+
+header > h1 img {
+    width: 108px;
+}
+
+.fa-user {
+    font-size: 40px;
+    /*    color: #765e54;*/
+    color: #7e6357;
+    padding: 20px 10px;
+    display: inline-block;
+    /* position: absolute;
+    right: 10px; */
+}
+
+
+#toggle {
+    /* position: fixed;
+    left: 10px;
+    top: 14px; */
+    width: 40px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 9999;
+    display: inline-block;
+    line-height: 15.5px;
+}
+
+#toggle span {
+    /*            background-color: #765e54;*/
+    background-color: #7e6357;
+    display: inline-block;
+    width: 40px;
+    height: 4px;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+/*       토글 45로 회전되는 서식*/
+.toggle_act01 {
+    transform: rotate(45deg);
+    position: absolute;
+    top: 21px;
+    background-color: #7e6357 !important;
+}
+
+.toggle_act02 {
+    display: none !important;
+}
+
+.toggle_act03 {
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 21px;
+    background-color: #7e6357;
+
+}
+
+
+/*        내비게이션 서식*/
+.gnb {
+    width: 80%;
+    height: 100vh;
+    background-color: rgba(255, 186, 76, 0.62);
+    position: absolute;
+    left: -80%;
+    top: 0px;
+    z-index: 100;
+    padding: 20% 3% 0% 5%;
+    box-sizing: border-box;
+    /*패팅, 테두리값 전체 크기에 포함하여 계산*/
+}
+
+.gnb ul {
+    padding-top: 16px;
+}
+
+.gnb ul > li {
+    font-size: 16px;
+    color: #34495e;
+    font-family: 'S-CoreDream-3Light', '맑은 고딕', sans-serif;
+    line-height: 35px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.gnb ul > li:hover {
+    background-color: #fff;
+}
+
+/*        화면 스크롤 시 토글 버틍의 포지션을 변경하여 위로 올라가게 한다. */
+.toggle_act {
+    position: absolute !important;
+}
+
+
+.gnb > .sns {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.gnb .sns li {
+    width: 60px;
+}
+
+.gnb .sns li img {
+    width: 75%;
+}
+
+#n_logo {
+    text-align: center;
+    padding-top: 20px;
+}
+
+#n_logo img {
+    width: 120px;
+}

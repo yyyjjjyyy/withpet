@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>위드펫 펫시터</title>
+
+    <!--	1. 초기화 -->
+    <link href="./style/reset.css" rel="stylesheet" type="text/css">
+
+    <!--  2. 공통서식 - 글꼴, 크기, 색상, 하이퍼링크 -->
+    <link href="./style/base.css" rel="stylesheet" type="text/css">
+    <link href="./style/common.css" rel="stylesheet" type="text/css">
+
+
+    <!--  3. mobile 서식  최대 1024px-->
+    <link href="./style/mobile_main.css" rel="stylesheet" type="text/css">
+    
+   
+    <!-- 5. pc서식 최소 1024이상 -->
+    <link href="./style/pc.css" rel="stylesheet" type="text/css">
+
+    <!-- 아이콘 폰트 주소 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" type="text/css" rel="stylesheet">
+
+
+    <!--	파비콘 이미지 -->
+    <link rel="shortcut icon" type="image/x-icon" href="./img/pet_pavi.ico" />
+
+    <!--플렉스 슬라이더 CSS-->
+    <link rel="stylesheet" href="./style/flexslider.css" type="text/css">
+
+    <!--제이쿼리 라이브러리-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+
+    <!--플렉스 슬라이더 제이쿼리 -->
+    <script src="./script/jquery.flexslider.js"></script>
+    <script>
+        $(document).ready(function() {
+            //           토글버튼 클릭시 스펜 태그를 엑스자 모양으로 변경
+
+            const toggle = $('header #toggle');
+
+            toggle.click(function() {
+                //각 span 에 적용
+                $(this).find('span').eq(0).toggleClass('toggle_act01'); //45
+                $(this).find('span').eq(1).toggleClass('toggle_act02'); //숨김
+                $(this).find('span').eq(2).toggleClass('toggle_act03'); //-45
+                //wrap 전체가 왼쪽에서 80% 이동 하여 보이게 됨 
+                // $('#wrap').toggleClass('wrap_pos');
+                $('#wrap2').toggleClass('wrap_pos');
+            });
+
+            let sPos;
+            //화면스크롤이 세로로 이동되면 토글버튼도 같이 올라가야 함. - fixed 속성을 absolute로 바꾸기 
+            $(window).scroll(function() {
+                sPos = $(window).scrollTop(); //화면 스크롤 값을 변수에 저장한다. 
+                console.log(sPos);
+                if (sPos >= 2) {
+                    $('#toggle').addClass('toggle_act');
+                } else {
+                    $('#toggle').removeClass('toggle_act');
+
+                }
+
+                /*       let=gnb$('.gnb>ul>li>a');
+                       
+                       gnb.click(function(e){
+                           e.preventDefault(); //#기능 무력화
+                           
+                           return false; //#기능 무력화
+                       });
+                       
+                       */
+
+            });
+
+
+            //플렉스슬라이더
+
+            $(window).load(function() {
+                $(".flexslider").flexslider({
+                    // animation: "slide"
+                    animation: "fade",
+                    slideshowSpeed: "3000",
+                });
+            });
+
+
+        });
+
+    </script>
+</head>
+
+
+
+
+<body>
+    <div id="wrap">
+        <div id="wrap2">
+        <header>
+
+            <!--        토글버튼-->
+            <div id="toggle">
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+            </div>
+
+
+            <h1>
+                <a href="index.html" title="메인페이지 바로가기">
+                    <img src="./img/withpet_logo.png" alt="위드펫로고">
+                </a>
+
+            </h1>
+
+            <a href="my.html" title="마이 페이지" class="user">
+                <i class="fas fa-user"></i>
+            </a>
+
+        </header>
+
+
+        <!--   gnb   - 헤더 밖에 만들어서 gnb가 메인화면을 밀고 나오도록 함 -->
+        <nav class="gnb">
+            <ul>
+                <li><a href="my.html" title="마이 페이지">마이페이지</a></li>
+                <li><a href="service.html" title="서비스 소개">서비스 소개</a></li>
+                <li><a href="event.html" title="회원 혜택">회원 혜택</a></li>
+                <li><a href="search.html" title="시터 검색">시터 검색</a></li>
+                <li><a href="care.html" title="돌봄 신청">돌봄 신청</a></li>
+                <li><a href="pet.html" title="반려견 등록">반려견 등록</a></li>
+                <li><a href="review.html " title="위드펫 후기">위드펫 후기</a></li>
+                <li><a href="petsitter.html" title="펫시터 지원">펫시터 지원</a></li>
+
+            </ul>
+
+            <div id="n_logo">
+                <a href="index.html" title="메인페이지 바로가기">
+                    <img src="./img/withpet_logo.png" alt="위드펫로고">
+                </a>
+            </div>
+
+            <ul class="sns">
+                <li><a href="https://www.instagram.com
+" title="인스타그램"><img src="./img/sns-02.png" alt="인스타그램"></a></li>
+                <li><a href="https://www.youtube.com/" title="유튜브"><img src="./img/sns-01.png" alt="유튜브"></a></li>
+                <li><a href="https://section.blog.naver.com/" title="블로그"><img src="./img/sns-03.png" alt="블로그"></a></li>
+                <li><a href="https://m.facebook.com/" title="메인페이지 상단으로 이동"><img src="./img/sns-04.png" alt="페이스북"></a></li>
+            </ul>
+        </nav>
+
+
+        <main>
+
+            <section class="slider clearfix">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li><img src="./img/main01.jpg" alt="메인이미지" /></li>
+                        <li><img src="./img/main02.jpg" alt="메인이미지" /></li>
+                        <li><img src="./img/main03.jpg" alt="메인이미지" /></li>
+
+                    </ul>
+                </div>
+            </section>
+
+
+            <article class="use">
+                <h2>위드펫 <span class="heart">&#x2665;</span> 이용가이드</h2>
+
+
+                <!--탭 라디오 버튼-->
+
+                <input type="radio" id="r01" name='con' checked>
+                <label for="r01">반려견 등록</label>
+
+                <input type="radio" id="r02" name='con'>
+                <label for="r02">시터 검색</label>
+
+                <input type="radio" id="r03" name='con'>
+                <label for="r03">돌봄 신청</label>
+
+                <input type="radio" id="r04" name='con'>
+                <label for="r04">돌봄 일지</label>
+
+                <div class="tab01">
+
+                    <h3> 반려견 등록</h3>
+                    <p>돌봄 신청 전 반려견 등록은 필수! <br>
+                        세심한 케어를 위해 필요한 내용들이니 <br>
+                        빠짐없이 작성부탁드려요 :) </p>
+                    <img src="./img/tab01.png" alt="반려견 등록">
+                </div>
+
+                <div class="tab02">
+
+                    <h3> 시터 검색</h3>
+                    <p> 위드펫에서 다양한 시터들을 만나보세요!<br>
+                        방문돌봄, 위탁 돌봄 선택 후 <br>
+                        [추천매칭] 또는 [상세검색]으로
+                        <br>원하는 조건의 시터를 검색할 수 있어요!
+                    </p>
+                    <img src="./img/tab02.png" alt="상세 검색">
+                </div>
+                <div class="tab03">
+
+                    <h3> 돌봄 신청</h3>
+                    <p> 시터 정보 확인 후 마음에 드는 시터님께 <br>돌봄 신청 또는 메시지를 보내주세요! <br>찜하기를 누르면 관심목록에 추가됩니다 :)</p>
+                    <img src="./img/tab03.png" alt="돌봄 신청">
+                </div>
+
+                <div class="tab04">
+
+
+                    <h3>돌봄 일지 </h3>
+                    <p>체크리스트/사진/영상뿐 아니라<br>
+                        요청사항을 반영한 상세한 돌봄 일지 작성<br>
+                        안심하고 맡기세요. 위드펫&#x2665;</p>
+                    <img src="./img/tab04.png" alt="시터 후기">
+                </div>
+            </article>
+
+            <article class="review">
+                <h2>믿을 수 있는 위드펫<span class="heart"> &#x2665;</span> 펫시터</h2>
+                <div>
+                    <a href="review.html">
+                        <ul class="r_list">
+                            <li class="r_img"><img src="./img/profile_13.png" alt="프로필사진"></li>
+                            <li class="r_name">곰돌이 보호자님<span> &#x2605;</span><span class="num">5.0</span></li>
+                            <li class="r_txt">벌써 두번째 돌봄이네요:) 꼼꼼하게 잘 챙겨주셔서 감사드려요. 회사일이 많아져 잦은 야근때문에 곰돌이 산책시간이 줄어들어 걱정이 많았어요ㅠㅠ워낙 활동적인 아이라 어떻게 해야 할지 고민이 많았는데 시터님께서 산책도 시켜주시고 활동적인 실내놀이도 함께 해주셔서 덕분에 한시름 놓았습니다. 다음에도 또 연락드릴게요! 감사합니다^_^
+                        </ul>
+
+                        <ul class="r_list">
+
+                            <li class="r_img"><img src="./img/profile_14.jpg" alt="프로필사진"></li>
+                            <li class="r_name">댕댕이 보호자님<span> &#x2605;</span><span class="num">5.0</span></li>
+                            <li class="r_txt">제가 부탁드린 사항들 일지에 꼼꼼하게 기록해주셔서 감사드립니다. 사진과 영상도 틈틈이 보내주셔서 마음놓고 출장 다녀올 수 있었습니다. 그동안 출장이나 여행때마다 맡길곳이 마땅치않아 항상 애먹었었는데 이렇게 좋은 서비스가 있단걸 이제야 알다니ㅜㅜ..이제라도 알게되어 다행입니다!! 주변 사람들께도 적극 추천하겠습니다! 일주일간 너무 감사했습니다! </li>
+                        </ul>
+
+                        <ul class="r_list">
+                            <li class="r_img"><img src="./img/profile_12.jpg" alt="프로필사진"></li>
+                            <li class="r_name">고구마 보호자님<span> &#x2605;</span><span class="num">5.0</span></li>
+                            <li class="r_txt">작년부터 돌봄 부탁드릴때마다 사진과 영상도 많이많이 찍어주시고, 친절하게 봐주셔서 감사해요! 무엇보다 구마와 성향이 딱 맞는 시터분으신것 같아 맡길때마다 안심입니다^~^ 구마도 시터님과의 시간이 즐거워보여서 기쁘네요. 다음에 또 봬요:) </li>
+                        </ul>
+                    </a>
+                </div>
+                <ul class="icon">
+
+                    <li> <a href="review.html" title="안심돌봄"><img src="./img/sitter_icon-01.png" alt="신원검증"> </a></li>
+                    <li> <a href="review.html" title="안심돌봄"><img src="./img/sitter_icon-02.png" alt="전문교육수료"> </a></li>
+                    <li> <a href="review.html" title="안심돌봄"><img src="./img/sitter_icon-03.png" alt="안전보험"> </a></li>
+                    <li> <a href="review.html" title="안심돌봄"><img src="./img/sitter_icon-04.png" alt="안전보안"> </a></li>
+                </ul>
+
+            </article>
+
+            <article class="event">
+                <a href="event.html" title="이벤트 페이지로 이동">
+                    <img src="./img/_event.jpg" alt="포인트지급_이벤트"></a>
+                <p><a href="join.html">회원가입하기</a></p>
+
+            </article>
+        </main>
+
+
+        <footer>
+            <div class=f_logo>
+                <a href="index.html" title="메인페이지 바로가기">
+                    <img src="./img/withpet_logo.png" alt="위드펫로고">
+                </a>
+                <p> 고객센터. 1234-5678 &#x24D4;. withpet@email.com </p>
+            </div>
+            <ul class="sns">
+                <li><a href="https://www.instagram.com/" title="인스타그램"><img src="./img/sns-02.png" alt="인스타그램"></a></li>
+                <li><a href="https://www.youtube.com/" title="유튜브"><img src="./img/sns-01.png" alt="유튜브"></a></li>
+                <li><a href="https://section.blog.naver.com/" title="블로그"><img src="./img/sns-03.png" alt="블로그"></a></li>
+                <li><a href="https://m.facebook.com/" title="메인페이지 상단으로 이동"><img src="./img/sns-04.png" alt="페이스북"></a></li>
+            </ul>
+            <address>
+
+
+                주식회사 위드펫 대표 윤땡땡 <br> 사업자등록번호: 000-00-00000 <br>서울시 노원구 마들로 00길 위드펫펫시터<br><br>
+                개인정보처리방침 &#124; 이메일무단수집거부<br>
+                Copyright &#x24D2; With pet All Rights Reserved. </address>
+
+            <div class="f_menu">
+               
+
+
+                <ul>
+                    <li>
+                        <!-- <p class="search"> <input type="search" id="search" placeholder="검색어를 입력해주세요:)"> <label for="search"><i class="fas fa-search"></i></label></p>-->
+                        <a href="search.html" title="관심목록"> 
+                            <img src="./img/f_mnu_-00.png" alt="검색" />
+                            <p>검색</p>
+                    </li>
+                    <li>
+                        <a href="heart.html" title="관심목록">
+                            <img src="./img/f_mnu_-04.png" alt="관심목록" />
+                            <p>관심목록</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="message.html" title="메시지">
+                            <img src="./img/f_mnu_-03.png" alt="메시지" />
+                            <p>메시지</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="date.html" title="일정">
+                            <img src="./img/f_mnu_-01.png" alt="일정">
+                            <p>일정</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="event.html" title="회원혜택">
+                            <img src="./img/f_mnu_-02.png" alt="회원혜택" />
+                            <p>회원혜택</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" title="메인화면 상단으로 이동">
+                            <img src="./img/f_mnu_-05.png" alt="위로">
+                            <p>TOP</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </footer>
+        </div> <!-- div#wrap2 -->
+    </div> <!-- div#wrap -->
+
+</body>
+
+</html>
